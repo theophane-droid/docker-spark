@@ -34,8 +34,18 @@ docker-compose up
 
 # 1. Usage
 
+In the logs you can find the url with the token to connect to jupyterlab.
+
+You can see the logs of jupyterlab with :
+
+```bash
+docker logs mk-jupyter
+```
+
+Look for a line like : http://127.0.0.1:8888/lab?token=63ab39a... Then copy and paste the url in your nagivator.
+ 
 Then you can go to http://localhost:8888 and use your spark instance with jupyterlab.
 
 # 2. Share data with jupyterlab
 
-To share any file with the jupyterlab instance, please create a data folder inside the project. Every file in this folder will goes to /usr/data in the jupyterlab instance.
+To share any file with the jupyterlab instance, please create a folder named "data" inside the project. Every file in this folder will goes to /usr/data in the jupyterlab instance.
