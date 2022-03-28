@@ -6,7 +6,10 @@ This is a docker stack built with 3 services :
 - spark master
 - spark worker.
 
-This project has been tested on debian/buster.
+This project has been tested on :
+
+- debian buster & bullseye
+- kali 
 
 # 0. Installation 
 
