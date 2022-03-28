@@ -6,9 +6,9 @@ volumes:
   
 services:
     jupyterlab:
+        build: env/jupyterlab
         networks :
               - sparknet
-        image: spark/jupyterlab:0.1
         container_name: mk-jupyter
         ports:
             - 8888:8888
@@ -16,10 +16,11 @@ services:
         volumes:
             - shared-workspace:/opt/workspace
             - ./data:/usr/data
+            - ./notebooks:/home/jovyan
     spark-master:
+        build: env/spark
         networks:
             - sparknet
-        image: spark/spark:0.1
         environment:
              - SPARK_MODE=master
         container_name: mk-spark-master
@@ -30,9 +31,9 @@ services:
         volumes:
                 - shared-workspace:/opt/workspace
     spark-worker-1:
+        build: env/spark
         networks:
                 - sparknet
-        image: spark/spark:0.1
         container_name: mk-spark-worker-1
         environment:
                 - SPARK_MODE=worker

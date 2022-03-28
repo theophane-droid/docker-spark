@@ -22,8 +22,11 @@ Then execute the followings :
 sudo systemctl enable docker
 sudo systemctl start docker
 
+
 git clone https://github.com/theophane-droid/docker-spark
 cd docker-spark
+mkdir notebooks
+chmod -R 777 notebooks
 chmod +x build.sh
 ./build.sh
 docker-compose up
