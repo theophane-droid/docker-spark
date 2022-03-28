@@ -25,6 +25,7 @@ sudo systemctl start docker
 git clone https://github.com/theophane-droid/docker-spark
 cd docker-spark
 chmod +x build.sh
+./build.sh
 docker-compose up
 ```
 
